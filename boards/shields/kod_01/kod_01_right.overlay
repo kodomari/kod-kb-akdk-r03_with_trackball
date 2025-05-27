@@ -50,7 +50,7 @@
 trackball_listener: trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-    input-processors = <&zip_xy_transform TRANSFORM_FLAGS>;
+    input-processors = <&zip_xy_transform (1 | 2)>; // 直接ビット演算
 };
 
 &physical_layout0 {
