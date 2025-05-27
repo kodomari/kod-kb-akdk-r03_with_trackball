@@ -10,7 +10,7 @@
         compatible = "zmk,matrix-transform";
         columns = <15>;
         rows = <5>;
-        map = 
+        map = <
             RC(0,0) RC(0,1) RC(0,2)
         >;
         col-offset = <7>;
