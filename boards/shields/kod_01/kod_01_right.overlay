@@ -42,10 +42,10 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11
             ;
     };
 
-    // 座標変換プロセッサを完全な形式で定義
+    // 座標変換プロセッサ（正しい cells 値で）
     zip_xy_transform: zip_xy_transform {
         compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <0>;
+        #input-processor-cells = <1>;
         x-codes = <INPUT_TRANSFORM_X_INVERT>;
         y-codes = <INPUT_TRANSFORM_Y_INVERT>;
     };
