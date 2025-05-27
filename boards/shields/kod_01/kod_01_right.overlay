@@ -42,7 +42,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11
             ;
     };
 
-    // 座標変換プロセッサ（正しい cells 値で）
+    // 座標変換プロセッサ
     zip_xy_transform: zip_xy_transform {
         compatible = "zmk,input-processor-transform";
         #input-processor-cells = <1>;
@@ -50,11 +50,11 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11
         y-codes = <INPUT_TRANSFORM_Y_INVERT>;
     };
 
-    // トラックボール機能
+    // トラックボール機能（変換フラグ付き）
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_xy_transform>;
+        input-processors = <&zip_xy_transform 3>;
     };
 };
 
