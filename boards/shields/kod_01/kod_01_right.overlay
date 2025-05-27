@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 
 / {
@@ -41,10 +42,10 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11
             ;
     };
 
-    // 座標変換プロセッサを定義
+    // 座標変換プロセッサを数値で定義
     zip_xy_transform: zip_xy_transform {
         compatible = "zmk,input-processor-transform";
-        type = <INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT>;
+        type = <3>;  // 3 = X_INVERT(1) | Y_INVERT(2)
     };
 
     // トラックボール機能
