@@ -41,19 +41,10 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11
             ;
     };
 
-    // 座標変換プロセッサを追加
-    input_config {
-        compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <1>;
-        x-invert;
-        y-invert;
-    };
-
-    // トラックボール機能（座標変換付き）
+    // 基本的なトラックボール機能（座標変換なし）
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&input_config 0>;
     };
 };
 
