@@ -1,0 +1,14 @@
+
+file_format: "1"
+id: kod_01
+name: kod_01
+type: shield
+features:
+  - keys
+  - studio
+outputs:
+  - usb
+  - ble
+siblings:
+  - kod_01_left
+  - kod_01_right

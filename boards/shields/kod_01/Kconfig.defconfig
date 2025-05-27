@@ -1,0 +1,14 @@
+
+if SHIELD_KOD_01_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "kod_01"
+
+endif
+
+if SHIELD_KOD_01_LEFT || SHIELD_KOD_01_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
