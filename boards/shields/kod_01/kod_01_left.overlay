@@ -1,6 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/input_transform.h>
-#include <input/processors.dtsi>
 #include "layouts.dtsi"
 
 / {
@@ -40,30 +38,6 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11
             , <&akdk_d 4 GPIO_ACTIVE_HIGH>
             , <&akdk_d 3 GPIO_ACTIVE_HIGH>
             ;
-    };
-
-    // ロータリーエンコーダー設定
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&akdk_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&akdk_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay";
-    };
-
-    // エンコーダープッシュボタン（オプション）
-    encoder_button: encoder_button {
-        compatible = "gpio-keys";
-        encoder_sw: encoder_sw {
-            gpios = <&akdk_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        };
-    };
-
-    // ロータリーエンコーダーをスクロールに変換
-    encoder_listener: encoder_listener {
-        compatible = "zmk,input-listener";
-        device = <&left_encoder>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
     };
 };
 
