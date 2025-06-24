@@ -10,22 +10,16 @@
     
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <15>;  // 左7列 + 右8列 = 15列
+        columns = <15>;
         rows = <5>;
-        // 右半分のマッピング（列7-14に対応）
-        map = 
-            // Row 0: 右半分8キー
+        map = <
             RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(0,12) RC(0,13) RC(0,14)
-            // Row 1: 右半分8キー  
             RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11) RC(1,12) RC(1,13) RC(1,14)
-            // Row 2: 右半分8キー
             RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11) RC(2,12) RC(2,13) RC(2,14)
-            // Row 3: 右半分8キー
             RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11) RC(3,12) RC(3,13) RC(3,14)
-            // Row 4: 右半分8キー
             RC(4,7) RC(4,8) RC(4,9) RC(4,10) RC(4,11) RC(4,12) RC(4,13) RC(4,14)
         >;
-        col-offset = <7>; // 左半分の7列分をオフセット
+        col-offset = <7>;
     };
     
     kscan0: kscan {
@@ -40,18 +34,17 @@
             , <&akdk_d 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         col-gpios
-            = <&akdk_d 14 GPIO_ACTIVE_HIGH>  // 右半分の列0
-            , <&akdk_d 13 GPIO_ACTIVE_HIGH>  // 右半分の列1
-            , <&akdk_d 12 GPIO_ACTIVE_HIGH>  // 右半分の列2
-            , <&akdk_d 11 GPIO_ACTIVE_HIGH>  // 右半分の列3
-            , <&akdk_d 5 GPIO_ACTIVE_HIGH>   // 右半分の列4
-            , <&akdk_d 4 GPIO_ACTIVE_HIGH>   // 右半分の列5
-            , <&akdk_d 3 GPIO_ACTIVE_HIGH>   // 右半分の列6
-            , <&akdk_d 2 GPIO_ACTIVE_HIGH>   // 右半分の列7
+            = <&akdk_d 14 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 13 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 12 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 11 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 5 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 4 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 3 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 2 GPIO_ACTIVE_HIGH>
             ;
     };
 
-    // トラックボール機能
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
@@ -64,7 +57,6 @@
     transform = <&default_transform>;
 };
 
-// 以下、SPI設定は変更なし
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
