@@ -34,12 +34,12 @@
             , <&akdk_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         col-gpios
-            = <&akdk_d 15 GPIO_ACTIVE_HIGH>
-            , <&akdk_d 14 GPIO_ACTIVE_HIGH>
+            = <&akdk_d 12 GPIO_ACTIVE_HIGH>
             , <&akdk_d 13 GPIO_ACTIVE_HIGH>
-            , <&akdk_d 12 GPIO_ACTIVE_HIGH>
-            , <&akdk_d 11 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 14 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 15 GPIO_ACTIVE_HIGH>
             , <&akdk_d 10 GPIO_ACTIVE_HIGH>
+            , <&akdk_d 11 GPIO_ACTIVE_HIGH>
             , <&akdk_d 8 GPIO_ACTIVE_HIGH>
             ;
     };
