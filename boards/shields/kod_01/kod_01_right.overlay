@@ -27,11 +27,11 @@
         wakeup-source;
         diode-direction = "col2row";
         row-gpios
-            = <&akdk_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&akdk_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&akdk_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&akdk_d 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&akdk_d 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&akdk_d 15 ...>  // row 0 (最上段)
+            , <&akdk_d 16 ...>  // row 1
+            , <&akdk_d 17 ...>  // row 2
+            , <&akdk_d 18 ...>  // row 3
+            , <&akdk_d 9  ...>  // row 4 (一番下 or 親指クラスタ)
             ;
         col-gpios
             = <&akdk_d 14 GPIO_ACTIVE_HIGH>
