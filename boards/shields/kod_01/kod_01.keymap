@@ -26,8 +26,8 @@
     &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
 
 // 5段目: 13キー
-    &kp A  &kp LGUI &kp LALT  &kp DEL &kp D 
-    &kp E  &kp F    &kp SPACE &kp G   &kp SPACE &kp RALT  &kp H   &kp UP
+    &kp A  &kp D  &kp LGUI &kp LALT  &kp DEL
+    &kp E  &kp F  &kp SPACE &kp G   &kp SPACE &kp RALT  &kp H   &kp UP
             >;
         };
     };
