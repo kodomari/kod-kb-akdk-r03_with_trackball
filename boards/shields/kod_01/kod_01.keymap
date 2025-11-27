@@ -21,13 +21,13 @@
     &kp LCTRL &kp A    &kp S    &kp D     &kp F    &kp G 
     &kp H     &kp J    &kp K    &kp L     &kp SEMI &kp SQT   &kp RET
 
-// 4段目: 14キー（Bのダブりは1個にして、Upは2個残し）
+// 4段目: 14キー
     &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &trans
     &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
 
-// 5段目: 13キー（末尾2つの &trans を削除）
-    &trans  &kp LGUI &kp LALT &kp SPACE &kp DEL &kp D &kp E
-    &kp SPACE &kp G &kp SPACE &kp RALT &kp G &kp UP
+// 5段目: 13キー
+    &kp A  &kp LGUI &kp LALT  &kp DEL &kp D 
+    &kp E  &kp F    &kp SPACE &kp G   &kp SPACE &kp RALT  &kp H   &kp UP
             >;
         };
     };
