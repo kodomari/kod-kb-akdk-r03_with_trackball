@@ -13,21 +13,21 @@
     &kp ESC   &kp N1   &kp N2   &kp N3    &kp N4   &kp N5   &kp N6 &trans
     &kp N7    &kp N8   &kp N9   &kp N0    &kp MINUS &kp EQUAL &kp BSPC
 
-// 2段目: 14キー（間の穴用の &trans を削除）OK
+// 2段目: 15キー（間の穴用の &trans を削除）OK
     &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T  &trans
     &kp Y     &kp U    &kp I    &kp O     &kp P    &kp LBKT  &kp RBKT &kp BSLH  
 
-// 3段目: 14キー OK
+// 3段目: 15キー OK
     &kp LCTRL &kp A    &kp S    &kp D     &kp F    &kp G  &trans
-    &kp H     &kp J    &kp K    &kp L     &kp SEMI &kp SQT   &kp RET &trans
+    &kp H     &kp J    &kp K    &kp L     &kp SEMI &kp SQT   &kp RET &kp RIGHT
 
-// 4段目: 14キー
+// 4段目: 15キー
     &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &trans
     &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT &kp DOWN
 
-// 5段目: 13キー（左の最下段右端は左から2番目に移動、左端は2番目）
+// 5段目: 14キー（左の最下段右端は左から2番目に移動、左端は2番目）
     &mo 1  &kp LGUI  &kp LALT &kp SPACE &kp DEL   &kp A
-    &kp F  &kp SPACE &kp G    &kp SPACE &kp RALT  &kp H   &kp UP &kp RIGHT
+    &kp F  &kp C    &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
             >;
         };
 
