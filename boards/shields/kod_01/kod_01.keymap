@@ -22,12 +22,12 @@
     &kp H     &kp J    &kp K    &kp L     &kp SEMI &kp SQT   &kp RET &trans
 
 // 4段目: 14キー
-    &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &trans &trans
-    &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+    &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &trans
+    &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT &kp DOWN
 
 // 5段目: 13キー（左の最下段右端は左から2番目に移動、左端は2番目）
-    &kp A  &mo 1  &kp LGUI &kp LALT  &kp DEL  &kp SPACE &trans
-    &kp F  &kp SPACE &kp G   &kp SPACE &kp RALT  &kp H   &kp UP
+    &mo 1  &kp LGUI  &kp LALT &kp SPACE &kp DEL   &kp A
+    &kp F  &kp SPACE &kp G    &kp SPACE &kp RALT  &kp H   &kp UP &kp RIGHT
             >;
         };
 
