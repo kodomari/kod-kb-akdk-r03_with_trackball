@@ -25,9 +25,36 @@
     &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &trans
     &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
 
-// 5段目: 13キー
-    &kp A  &kp D  &kp LGUI &kp LALT  &kp DEL
-    &kp E  &kp F  &kp SPACE &kp G   &kp SPACE &kp RALT  &kp H   &kp UP
+// 5段目: 13キー（左の最下段右端は左から2番目に移動、左端は2番目）
+    &kp A  &mo 1  &kp LGUI &kp LALT  &kp DEL  &kp SPACE
+    &kp F  &kp SPACE &kp G   &kp SPACE &kp RALT  &kp H   &kp UP
+            >;
+        };
+
+        fn_layer {
+            display-name = "Layer1";
+            bindings = <
+                /* 1段目: `, F1〜F12, 残りは透過（例として右端2つ） */
+                &kp GRAVE  &kp F1   &kp F2   &kp F3   &kp F4
+                &kp F5     &kp F6   &kp F7   &kp F8   &kp F9
+                &kp F10    &kp F11  &kp F12  &trans   &trans
+
+                /* 2〜5段目は全部透過（layer0のキーがそのまま出る） */
+                /* 2段目: 14個 &trans */
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans
+
+                /* 3段目: 14個 &trans */
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans
+
+                /* 4段目: 14個 &trans */
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans
+
+                /* 5段目: 13個 &trans */
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans
             >;
         };
     };
