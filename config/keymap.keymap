@@ -1,4 +1,3 @@
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -6,43 +5,84 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /*
+         * layer_0: 通常レイヤ（ほぼ 60% QWERTY レイアウト）
+         *
+         * 行ごとの要素数:
+         *   1行目: 15
+         *   2行目: 14
+         *   3行目: 14
+         *   4行目: 14
+         *   5行目: 13
+         *
+         * 右下あたりの親指クラスタはまだ未確定なので &none にしてあります。
+         * 必要に応じて Studio から差し替えてください。
+         */
+
         layer_0 {
-            bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none
+            bindings = <
+                // Row 0 (上段): Esc 1 2 3 4 5 6   7 8 9 0 - = BkSp [ダミー]
+                &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4
+                &kp N5    &kp N6    &kp N7    &kp N8    &kp N9
+                &kp N0    &kp MINUS &kp EQUAL &kp BSPC  &none
+
+                // Row 1: Tab Q W E R T   Y U I O P [ ] \
+                &kp TAB   &kp Q     &kp W     &kp E     &kp R
+                &kp T     &kp Y     &kp U     &kp I     &kp O
+                &kp P     &kp LBKT  &kp RBKT  &kp BSLH
+
+                // Row 2: Ctrl A S D F G   H J K L ; ' Ret [ダミー]
+                &kp LCTRL &kp A     &kp S     &kp D     &kp F
+                &kp G     &kp H     &kp J     &kp K     &kp L
+                &kp SEMI  &kp APOS  &kp RET   &none
+
+                // Row 3: LShift Z X C V B   N M , . / RShift [ダミー] [ダミー]
+                &kp LSHFT &kp Z     &kp X     &kp C     &kp V
+                &kp B     &kp N     &kp M     &kp COMMA &kp DOT
+                &kp FSLH  &kp RSHFT &none     &none
+
+                // Row 4: FN, GUI, ALT, Space, Del, 残りは未使用
+                &mo 1     &kp LGUI  &kp LALT  &kp SPACE &kp DEL
+                &none     &none     &none     &none     &none
+                &none     &none     &none
             >;
         };
+
+        /*
+         * layer_1: FN レイヤ
+         *
+         * - 左下の FN キー（layer_0 Row4 最初のキー）を押している間だけ有効。
+         * - Esc → `~`
+         * - 1〜0, - , = → F1〜F12
+         * - それ以外は &trans （下のレイヤのキーそのまま）
+         */
 
         layer_1 {
-            bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
+            bindings = <
+                // Row 0: ` ~, F1〜F12, 残りは透過
+                &kp GRAVE &kp F1    &kp F2    &kp F3    &kp F4
+                &kp F5    &kp F6    &kp F7    &kp F8    &kp F9
+                &kp F10   &kp F11   &kp F12   &trans    &trans
 
-        layer_2 {
-            bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
+                // Row 1: すべて透過
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans
 
-        layer_3 {
-            bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none
+                // Row 2: すべて透過
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans
+
+                // Row 3: すべて透過
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans
+
+                // Row 4: すべて透過（FNキー自身も透過でOK）
+                &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans
+                &trans &trans &trans
             >;
         };
     };
