@@ -73,4 +73,27 @@
             >;
         };
     };
+    /* ▼▼ ここからエンコーダ用テスト設定 ▼▼ */
+
+    encoder_keypress: encoder_keypress {
+        compatible = "zmk,behavior-sensor-rotate-key-press";
+        label = "ENC_KP_TEST";
+
+        // 1クリック分回したときのキー
+        bindings = <&kp N1 &kp N2>;
+    };
+
+    encoder_sensor_map: encoder_sensor_map {
+        compatible = "zmk,sensor-keymap";
+
+        // left.overlay のラベルと一致させる
+        sensors = <&left_encoder>;
+
+        // ↑の behavior を使う
+        sensor-bindings = <&encoder_keypress>;
+    };
+
+    /* ▲▲ ここまでを追加 ▲▲ */
+
+
 };
