@@ -54,7 +54,9 @@
 
                 /* 5段目: 13個 &trans */
                 &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans 
+
+&inc_dec_kp N1 N2
             >;
         };
     };
