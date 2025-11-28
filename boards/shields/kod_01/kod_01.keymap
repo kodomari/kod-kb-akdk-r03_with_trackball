@@ -15,6 +15,9 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* ← これを追加：センサー 0 番として left_encoder を使う */
+        sensors = <&left_encoder>;
+
         default_layer {
             display-name = "Layer0";
             bindings = <
