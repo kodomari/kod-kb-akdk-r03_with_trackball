@@ -4,20 +4,8 @@
 #include "layouts.dtsi"
 
 / {
-    behaviors {
-        enc_key_press {
-            #binding-cells = <0>;
-        };
-    };
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
-
-        /* ← これを追加：センサー 0 番として left_encoder を使う */
-        sensors = <&left_encoder>;
-        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 
         default_layer {
             display-name = "Layer0";
@@ -73,27 +61,5 @@
             >;
         };
     };
-    /* ▼▼ ここからエンコーダ用テスト設定 ▼▼ */
-
-    encoder_keypress: encoder_keypress {
-        compatible = "zmk,behavior-sensor-rotate-key-press";
-        label = "ENC_KP_TEST";
-
-        // 1クリック分回したときのキー
-        bindings = <&kp N1 &kp N2>;
-    };
-
-    encoder_sensor_map: encoder_sensor_map {
-        compatible = "zmk,sensor-keymap";
-
-        // left.overlay のラベルと一致させる
-        sensors = <&left_encoder>;
-
-        // ↑の behavior を使う
-        sensor-bindings = <&encoder_keypress>;
-    };
-
-    /* ▲▲ ここまでを追加 ▲▲ */
-
 
 };
