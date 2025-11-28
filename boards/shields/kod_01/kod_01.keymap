@@ -26,8 +26,8 @@
     &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT &kp DOWN
 
 // 5段目: 14キー（左の最下段右端は左から2番目に移動、左端は2番目）
-    &mo 1    &kp LGUI  &kp LALT &kp SPACE &kp DEL   &kp A
-    &kp BTN2 &kp BTN1  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
+    &mo 1     &kp LGUI   &kp LALT &kp SPACE &kp DEL   &kp A
+    &mkp BTN2 &mkp BTN1  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
             >;
         };
 
