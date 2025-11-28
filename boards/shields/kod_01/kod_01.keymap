@@ -17,6 +17,7 @@
 
         /* ← これを追加：センサー 0 番として left_encoder を使う */
         sensors = <&left_encoder>;
+        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 
         default_layer {
             display-name = "Layer0";
