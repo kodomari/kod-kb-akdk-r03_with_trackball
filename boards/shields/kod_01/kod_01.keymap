@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "layouts.dtsi"
 
 / {
@@ -27,7 +28,7 @@
 
 // 5段目: 14キー（左の最下段右端は左から2番目に移動、左端は2番目）
     &mo 1     &kp LGUI   &kp LALT &kp SPACE &kp DEL   &kp A
-    &mkp BTN2 &mkp BTN1  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
+    &mkp RCLK &mkp LCLK  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
             >;
         };
 
