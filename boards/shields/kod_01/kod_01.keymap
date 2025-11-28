@@ -38,9 +38,9 @@
     &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &trans
     &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT &kp DOWN
 
-// 5段目: 14キー（テスト用）
+// 5段目: 14キー
     &mo 1     &kp LGUI   &kp LALT &kp SPACE &kp DEL   &kp A
-    &kp A     &kp B      &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
+    &mkp RCLK &mkp LCLK  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
             >;
         };
 
