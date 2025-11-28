@@ -44,6 +44,29 @@
 			,<&akdk_d 8 GPIO_ACTIVE_HIGH>
             ;
     };
+    // --- ここからロータリーエンコーダ設定 ---
+
+    left_encoder: left_encoder {
+        compatible = "alps,ec11";
+        // A/B は AKDK の 2番ピン / 1番ピン
+        a-gpios = <&akdk_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&akdk_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <4>;      // 1ノッチあたりのパルス数。EC11 なら 2〜4 で様子見
+        status = "okay";
+    };
+
+    // 回転 → キー入力 に変換するマッピング
+    encoder_scroller: encoder_scroller {
+        compatible = "zmk,sensor-keymap";
+
+        // ↑ で定義したエンコーダをセンサーとして使う
+        sensors = <&left_encoder>;
+
+        // 右回しで PgUp、左回しで PgDn（スクロール確認用）
+        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+    };
+
+    // --- ここまでロータリーエンコーダ設定 ---
 
 };
 
