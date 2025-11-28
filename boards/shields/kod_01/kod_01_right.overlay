@@ -41,7 +41,7 @@
 			,<&akdk_d 11 GPIO_ACTIVE_HIGH>
 			,<&akdk_d 10 GPIO_ACTIVE_HIGH>
 			,<&akdk_d 8  GPIO_ACTIVE_HIGH>
-			,<&akdk_d 18  GPIO_ACTIVE_HIGH>
+			,<&akdk_d 7  GPIO_ACTIVE_HIGH>
 			,<&akdk_d 6  GPIO_ACTIVE_HIGH>
 			,<&akdk_d 5  GPIO_ACTIVE_HIGH>
             ;
