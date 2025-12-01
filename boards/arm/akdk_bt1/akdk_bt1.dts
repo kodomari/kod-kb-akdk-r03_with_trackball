@@ -43,8 +43,8 @@
 	};
     left_encoder: left_encoder {
         compatible = "alps,ec11";
-        a-gpios = <&akdk_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&akdk_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&akdk_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&akdk_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <4>;
         status = "okay";
     };
