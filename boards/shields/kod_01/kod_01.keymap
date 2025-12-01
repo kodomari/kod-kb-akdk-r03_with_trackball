@@ -31,7 +31,7 @@
 
 // 5段目: 14キー
     &mo 1     &kp LGUI   &kp LALT &kp SPACE &kp DEL   &kp A
-    &mkp RCLK &mkp LCLK  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
+    &mkp RCLK &mkp LCLK  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT &kp A &kp B
             >;
         };
 
