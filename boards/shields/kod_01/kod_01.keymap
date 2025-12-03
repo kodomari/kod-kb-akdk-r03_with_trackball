@@ -5,8 +5,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-/* スクロール速度を上げる（デフォルト10は小さすぎる） */
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+/* 
+ * スクロール量の調整
+ * 小さい値 = 少しずつスクロール
+ * 大きい値 = 速くスクロール
+ */
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30
 
 #include <dt-bindings/zmk/pointing.h>
 
@@ -16,7 +20,7 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <100>;
+        tap-ms = <50>;  /* 100ms → 50ms に短縮 */
     };
 
     keymap {
