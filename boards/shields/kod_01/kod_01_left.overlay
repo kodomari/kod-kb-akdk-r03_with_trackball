@@ -1,6 +1,10 @@
+/*
+ * kod_01_left.overlay - 左手側（Peripheral）
+ */
+
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "layouts.dtsi"
+#include "kod_01.dtsi"
 
 / {
     chosen {
@@ -45,20 +49,11 @@
             , <&akdk_d 8 GPIO_ACTIVE_HIGH>
             ;
     };
+};
 
-    left_encoder: left_encoder {
-        compatible = "alps,ec11";
-        a-gpios = <&akdk_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&akdk_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay";
-    };
-
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>;
-        triggers-per-rotation = <20>;
-    };
+/* エンコーダを有効化 */
+&left_encoder {
+    status = "okay";
 };
 
 &physical_layout0 {
