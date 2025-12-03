@@ -4,9 +4,21 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+
+/* スクロール速度を上げる（デフォルト10は小さすぎる） */
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    /* エンコーダ用のスクロール動作定義 */
+    scroll_encoder: scroll_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        tap-ms = <100>;  /* 長めに設定 */
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -28,8 +40,7 @@
                 &mo 1     &kp LGUI  &kp LALT &kp DEL   &kp SPACE &kp A
                 &mkp RCLK &mkp LCLK &kp G    &kp SPACE &kp RALT  &kp PSCRN &kp UP    &kp LEFT
             >;
-            /* 矢印キーでスクロール（1行ずつ、滑らか） */
-            sensor-bindings = <&inc_dec_kp DOWN UP>;
+            sensor-bindings = <&scroll_encoder>;
         };
 
         fn_layer {
@@ -51,7 +62,6 @@
                 &trans    &trans    &trans   &trans    &trans    &trans
                 &trans    &trans    &trans   &trans    &trans    &trans
             >;
-            /* FnレイヤーではVolume Up/Down */
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
