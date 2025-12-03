@@ -62,3 +62,12 @@
         };
     };
 };
+/ {
+    behaviors {
+        encoder_scroller: encoder_scroller {
+            compatible = "zmk,sensor-keymap";
+            sensors = <&left_encoder>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+        };
+    };
+};
