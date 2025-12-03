@@ -10,66 +10,44 @@
         default_layer {
             display-name = "Layer0";
             bindings = <
-// 1段目: 15キー
-    &kp ESC   &kp N1   &kp N2   &kp N3    &kp N4   &kp N5   &kp N6 &trans
-    &kp N7    &kp N8   &kp N9   &kp N0    &kp MINUS &kp EQUAL &kp BSPC
+                &kp ESC   &kp N1   &kp N2   &kp N3    &kp N4    &kp N5    &kp N6    &trans
+                &kp N7    &kp N8   &kp N9   &kp N0    &kp MINUS &kp EQUAL &kp BSPC
 
-// 2段目: 15キー
-    &kp TAB   &kp Q    &kp W    &kp E     &kp R    &kp T    &trans
-    &kp Y     &kp U    &kp I    &kp O     &kp P    &kp LBKT  &kp RBKT &kp BSLH
+                &kp TAB   &kp Q    &kp W    &kp E     &kp R     &kp T     &trans
+                &kp Y     &kp U    &kp I    &kp O     &kp P     &kp LBKT  &kp RBKT  &kp BSLH
 
-// 3段目: 15キー OK
-    &kp LCTRL &kp A    &kp S    &kp D     &kp F    &kp G  &trans
-    &kp H     &kp J    &kp K    &kp L     &kp SEMI &kp SQT   &kp RET &kp RIGHT
+                &kp LCTRL &kp A    &kp S    &kp D     &kp F     &kp G     &trans
+                &kp H     &kp J    &kp K    &kp L     &kp SEMI  &kp SQT   &kp RET   &kp RIGHT
 
-// 4段目: 15キー
-    &kp LSHFT &kp Z    &kp X    &kp C     &kp V    &kp B    &kp A
-    &kp B     &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT &kp DOWN
+                &kp LSHFT &kp Z    &kp X    &kp C     &kp V     &kp B     &kp A
+                &kp B     &kp N    &kp M    &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT &kp DOWN
 
-// 5段目: 14キー
-    &mo 1     &kp LGUI   &kp LALT &kp DEL &kp SPACE   &kp A
-    &mkp RCLK &mkp LCLK  &kp G    &kp SPACE &kp RALT  &kp PSCRN   &kp UP &kp LEFT
+                &mo 1     &kp LGUI &kp LALT &kp DEL   &kp SPACE &kp A
+                &mkp RCLK &mkp LCLK &kp G   &kp SPACE &kp RALT  &kp PSCRN &kp UP    &kp LEFT
             >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         fn_layer {
             display-name = "Layer1";
             bindings = <
-                /* 1段目: `, F1〜F12, 残りは透過（例として右端2つ） */
-                &kp GRAVE  &kp F1   &kp F2   &kp F3   &kp F4
-                &kp F5     &kp F6   &kp F7   &kp F8   &kp F9
-                &kp F10    &kp F11  &kp F12  &trans   &trans
+                &kp GRAVE &kp F1   &kp F2   &kp F3    &kp F4
+                &kp F5    &kp F6   &kp F7   &kp F8    &kp F9
+                &kp F10   &kp F11  &kp F12  &trans    &trans
 
-                /* 2〜5段目は全部透過（layer0のキーがそのまま出る） */
-                /* 2段目: 14個 &trans */
-                &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans    &trans   &trans   &trans    &trans    &trans
+                &trans    &trans   &trans   &trans    &trans    &trans    &trans    &trans
 
-                /* 3段目: 14個 &trans */
-                &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans    &trans   &trans   &trans    &trans    &trans
+                &trans    &trans   &trans   &trans    &trans    &trans    &trans    &trans
 
-                /* 4段目: 14個 &trans */
-                &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans    &trans   &trans   &trans    &trans    &trans
+                &trans    &trans   &trans   &trans    &trans    &trans    &trans    &trans
 
-                /* 5段目: 13個 &trans */
-                &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans 
-
-
+                &trans    &trans   &trans   &trans    &trans    &trans
+                &trans    &trans   &trans   &trans    &trans    &trans
             >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
-    };
-};
-/ {
-    encoder_scroller: encoder_scroller {
-        compatible = "zmk,sensor-keymap";
-
-        // bt1.dts の left_encoder を参照
-        sensors = <&left_encoder>;
-
-        // 回転で PgUp / PgDn
-        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
     };
 };
