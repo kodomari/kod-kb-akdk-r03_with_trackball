@@ -5,10 +5,19 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-/* スクロール速度を上げる（デフォルト10は小さすぎる） */
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+/* スクロール速度 */
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15
 
 #include <dt-bindings/zmk/pointing.h>
+
+/* 
+ * mscの加速設定を調整
+ * デフォルトだと最大速度に達するまで時間がかかる
+ */
+&msc {
+    time-to-max-speed-ms = <0>;       /* 即座に最大速度（加速なし） */
+    acceleration-exponent = <0>;       /* 加速カーブなし */
+};
 
 / {
     /* エンコーダ用のスクロール動作定義 */
@@ -16,7 +25,7 @@
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <100>;  /* 長めに設定 */
+        tap-ms = <30>;  /* 短めでOK（加速なしなので） */
     };
 
     keymap {
