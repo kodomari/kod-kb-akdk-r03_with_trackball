@@ -48,6 +48,27 @@
 
             ;
     };
+    // --- ここからロータリーエンコーダ設定 ---
+
+    left_encoder: left_encoder {
+        compatible = "alps,ec11";
+        a-gpios = <&akdk_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&akdk_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        steps   = <4>;
+        status  = "okay";
+    };
+
+    encoder_scroller: encoder_scroller {
+        compatible = "zmk,sensor-keymap";
+
+        // ↑ で定義したエンコーダをセンサーとして使う
+        sensors = <&left_encoder>;
+
+        // 右回しで PgUp、左回しで PgDn（スクロール確認用）
+        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+    };
+
+    // --- ここまでロータリーエンコーダ設定 ---
 
 };
 
