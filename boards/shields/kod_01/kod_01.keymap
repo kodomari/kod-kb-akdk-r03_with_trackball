@@ -63,11 +63,13 @@
     };
 };
 / {
-    behaviors {
-        encoder_scroller: encoder_scroller {
-            compatible = "zmk,sensor-keymap";
-            sensors = <&left_encoder>;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
-        };
+    encoder_scroller: encoder_scroller {
+        compatible = "zmk,sensor-keymap";
+
+        // bt1.dts の left_encoder を参照
+        sensors = <&left_encoder>;
+
+        // 回転で PgUp / PgDn
+        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
     };
 };
