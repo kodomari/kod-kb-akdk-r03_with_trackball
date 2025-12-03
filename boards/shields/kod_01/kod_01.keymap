@@ -4,32 +4,6 @@
 #include "layouts.dtsi"
 
 / {
-
-    /* エンコーダ用の「回転→キー」ビヘイビア */
-    behaviors {
-        encoder_scroller: encoder_scroller {
-            compatible = "zmk,behavior-sensor-rotate-key-press";
-            label = "ENCODER_SCROLL";
-
-            // 右回転で PgUp、左回転で PgDn
-            bindings = <&kp PG_UP &kp PG_DN>;
-            // マウスホイールにしたいなら:
-            // bindings = <&mkp WH_U &mkp WH_D>;
-        };
-    };
-
-    /* センサ → ビヘイビア のひも付け */
-    encoder_sensor_map: encoder_sensor_map {
-        compatible = "zmk,sensor-keymap";
-
-        // board dts で定義した left_encoder を1つだけ使う
-        sensors = <&left_encoder>;
-
-        // sensors の 0番に、上の encoder_scroller を割り当て
-        sensor-bindings = <&encoder_scroller>;
-    };
-
-
     keymap {
         compatible = "zmk,keymap";
 
