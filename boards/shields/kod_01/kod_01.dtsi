@@ -21,6 +21,10 @@
     /*
      * センサーノード
      * Central（右手）がエンコーダを認識するために必要
+     * 
+     * triggers-per-rotation: 1回転あたりの発火回数
+     *   小さい値 = 粗い（少ない回数で多くスクロール）
+     *   大きい値 = 細かい（多くの回数で少しずつスクロール）
      */
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
