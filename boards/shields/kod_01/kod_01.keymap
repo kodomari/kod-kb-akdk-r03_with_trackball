@@ -4,23 +4,19 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/output.h>
 
-/* 
- * スクロール量の調整
- * 小さい値 = 少しずつスクロール
- * 大きい値 = 速くスクロール
- */
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 60
 
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    /* エンコーダ用のスクロール動作定義 */
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <60>;  /* 100ms → 50ms に短縮 */
+        tap-ms = <60>;
     };
 
     keymap {
@@ -50,19 +46,26 @@
         fn_layer {
             display-name = "Layer1";
             bindings = <
+                /* 1段目: チルダ, F1-F12 */
                 &kp GRAVE &kp F1    &kp F2   &kp F3    &kp F4
                 &kp F5    &kp F6    &kp F7   &kp F8    &kp F9
                 &kp F10   &kp F11   &kp F12  &trans    &trans
 
+                /* 2段目: BT操作 */
+                /* Fn+Q-T: BTプロファイル0-4選択 */
+                /* Fn+Y: 全ボンドクリア, Fn+U: USB/BLE切替 */
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+                &bt BT_CLR_ALL &out OUT_TOG &trans    &trans    &trans    &trans    &trans    &trans
+
+                /* 3段目 */
                 &trans    &trans    &trans   &trans    &trans    &trans
                 &trans    &trans    &trans   &trans    &trans    &trans    &trans    &trans
 
+                /* 4段目 */
                 &trans    &trans    &trans   &trans    &trans    &trans
                 &trans    &trans    &trans   &trans    &trans    &trans    &trans    &trans
 
-                &trans    &trans    &trans   &trans    &trans    &trans
-                &trans    &trans    &trans   &trans    &trans    &trans    &trans    &trans
-
+                /* 5段目 */
                 &trans    &trans    &trans   &trans    &trans    &trans
                 &trans    &trans    &trans   &trans    &trans    &trans
             >;
