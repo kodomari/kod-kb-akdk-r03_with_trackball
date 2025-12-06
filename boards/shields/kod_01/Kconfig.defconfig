@@ -1,14 +1,20 @@
+# Kconfig.defconfig for kod_01
 
-if SHIELD_KOD_01_LEFT
+# 右側がCentralなので、右側にキーボード名を設定
+if SHIELD_KOD_01_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "kod_01"
 
-endif
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_KOD_01_RIGHT
+
 
 if SHIELD_KOD_01_LEFT || SHIELD_KOD_01_RIGHT
 
 config ZMK_SPLIT
     default y
 
-endif
+endif # SHIELD_KOD_01_LEFT || SHIELD_KOD_01_RIGHT
